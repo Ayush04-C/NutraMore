@@ -1,4 +1,4 @@
-# Nutramore Health Foods — Digital Product & UX Intern Assignment
+<img width="1393" height="405" alt="image" src="https://github.com/user-attachments/assets/3a6cad64-1ca1-42b4-8001-addd3c1bbc8d" /># Nutramore Health Foods — Digital Product & UX Intern Assignment
 
 A fully structured React application presenting my UX audit and redesign for Nutramore's Product Detail Page.
 
@@ -42,10 +42,13 @@ nutramore-assignment/
 ##  How to Run
 
 ```bash
-# 1. Install dependencies
+# 1. Cloning Repo
+git clone https://github.com/Ayush04-C/NutraMore
+
+# 2. Install dependencies
 npm install
 
-# 2. Start dev server
+# 3. Start dev server
 npm start
 
 # 3. Open in browser
