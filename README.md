@@ -1,4 +1,4 @@
-<img width="1393" height="405" alt="image" src="https://github.com/user-attachments/assets/3a6cad64-1ca1-42b4-8001-addd3c1bbc8d" /># Nutramore Health Foods — Digital Product & UX Intern Assignment
+# Nutramore Health Foods — Digital Product & UX Intern Assignment
 
 A fully structured React application presenting my UX audit and redesign for Nutramore's Product Detail Page.
 
@@ -51,7 +51,7 @@ npm install
 # 3. Start dev server
 npm start
 
-# 3. Open in browser
+# 4. Open in browser
 # http://localhost:3000
 ```
 
