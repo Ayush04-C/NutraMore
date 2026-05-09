@@ -42,13 +42,16 @@ nutramore-assignment/
 ##  How to Run
 
 ```bash
-# 1. Install dependencies
+# 1. Cloning Repo
+git clone https://github.com/Ayush04-C/NutraMore
+
+# 2. Install dependencies
 npm install
 
-# 2. Start dev server
+# 3. Start dev server
 npm start
 
-# 3. Open in browser
+# 4. Open in browser
 # http://localhost:3000
 ```
 
