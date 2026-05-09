@@ -38,17 +38,8 @@ export default function Cover() {
       </div>
 
       {/* Logo */}
-      <div style={{
-        fontFamily: 'var(--font-display)', fontSize: 52,
-        color: '#fff', letterSpacing: -1, marginBottom: 6, textAlign: 'center',
-      }}>
-        Nutra<span style={{ color: '#E8650A' }}>m</span>ore
-      </div>
-      <div style={{
-        fontSize: 13, color: '#8B7355', letterSpacing: 3,
-        textTransform: 'uppercase', marginBottom: 56,
-      }}>
-        Your Fitness. Our Pride.
+      <div style={{ marginBottom: 56, display: 'flex', justifyContent: 'center' }}>
+        <img src="https://nutramore.in/wp-content/uploads/2023/06/nutramore-logo.svg" alt="Nutramore Logo" style={{ height: 60, width: 'auto' }} />
       </div>
 
       {/* Title */}

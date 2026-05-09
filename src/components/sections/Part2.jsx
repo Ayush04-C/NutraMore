@@ -30,8 +30,8 @@ export default function Part2() {
 
           {/* Nav */}
           <div style={{ background: '#fff', borderBottom: '2px solid var(--orange)', padding: '14px 40px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-            <div style={{ fontFamily: 'var(--font-display)', fontSize: 22, color: 'var(--orange)' }}>
-              Nutra<span style={{ color: 'var(--dark)' }}>m♥re</span>
+            <div style={{ height: 32 }}>
+              <img src="https://nutramore.in/wp-content/uploads/2023/06/nutramore-logo.svg" alt="Nutramore Logo" style={{ height: '100%', width: 'auto' }} />
             </div>
             <div style={{ display: 'flex', gap: 24, fontSize: 13, color: 'var(--mid)' }}>
               {['Home','Shop ▾','Our Story','Our Community','Blog'].map(l => <span key={l}>{l}</span>)}
@@ -294,10 +294,9 @@ export default function Part2() {
             <div style={{ background: '#ED7E29', padding: '60px 40px', color: '#fff', display: 'grid', gridTemplateColumns: '1.2fr 1.5fr 1fr 1fr', gap: 40 }}>
               {/* Brand */}
               <div>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: 36, fontWeight: 700, lineHeight: 1, marginBottom: 8 }}>
-                  Nutra<span style={{ color: '#fff' }}>m♥re</span><span style={{ fontSize: 12, verticalAlign: 'top' }}>™</span>
+                <div style={{ height: 48, marginBottom: 12 }}>
+                  <img src="https://nutramore.in/wp-content/uploads/2023/06/nutramore-logo.svg" alt="Nutramore Logo" style={{ height: '100%', width: 'auto', filter: 'brightness(0) invert(1)' }} />
                 </div>
-                <div style={{ fontSize: 11, letterSpacing: 1, textTransform: 'uppercase', fontWeight: 600 }}>Your fitness, our pride</div>
               </div>
 
               {/* Contact Us */}
