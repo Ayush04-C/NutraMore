@@ -51,12 +51,27 @@ export default function Part2() {
             {/* Product main grid */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'start' }}>
               {/* Left: image */}
-              <div style={{ position: 'relative' }}>
-                <div style={{ position: 'absolute', top: 14, right: 14, background: 'var(--orange)', color: '#fff', fontSize: 11, fontWeight: 700, padding: '5px 10px', borderRadius: 5, letterSpacing: 1 }}>SALE</div>
-                <div style={{ background: 'linear-gradient(135deg, #FDF0E6 0%, #FFF8F0 100%)', borderRadius: 'var(--radius)', border: '1px solid var(--border)', aspectRatio: '1', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 80, marginBottom: 12 }}>🍪</div>
-                <div style={{ display: 'flex', gap: 8 }}>
-                  {['🍪','📦','🌾','✨'].map((e, i) => (
-                    <div key={i} style={{ width: 60, height: 60, background: '#FDF0E6', borderRadius: 8, border: i === 0 ? '2px solid var(--orange)' : '2px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22, cursor: 'pointer' }}>{e}</div>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: 14, right: 14, background: 'var(--orange)', color: '#fff', fontSize: 11, fontWeight: 700, padding: '5px 10px', borderRadius: 5, letterSpacing: 1, zIndex: 10 }}>SALE</div>
+                  <div style={{ borderRadius: 'var(--radius)', border: '1px solid var(--border)', aspectRatio: '1', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12, overflow: 'hidden' }}>
+                    <img src="https://nutramore.in/wp-content/uploads/2023/06/moong-cookies-image-2.jpg" alt="Nutramore Cookies" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  </div>
+                  <div style={{ display: 'flex', gap: 8 }}>
+                    {['🍪','📦','🌾','✨'].map((e, i) => (
+                      <div key={i} style={{ width: 60, height: 60, background: '#FDF0E6', borderRadius: 8, border: i === 0 ? '2px solid var(--orange)' : '2px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22, cursor: 'pointer' }}>{e}</div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Guarantee strip moved from right to left */}
+                <div style={{ display: 'flex', border: '1px solid var(--border)', borderRadius: 8, overflow: 'hidden', marginTop: 32 }}>
+                  {guaranteeItems.map((g, i) => (
+                    <div key={i} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '10px 4px', fontSize: 11, color: 'var(--mid)', textAlign: 'center', borderRight: i < guaranteeItems.length - 1 ? '1px solid var(--border)' : 'none', gap: 4 }}>
+                      <span style={{ fontSize: 18 }}>{g.icon}</span>
+                      <strong style={{ color: 'var(--dark)', fontSize: 11 }}>{g.label}</strong>
+                      {g.sub && <span>{g.sub}</span>}
+                    </div>
                   ))}
                 </div>
               </div>
@@ -94,20 +109,9 @@ export default function Part2() {
                 </div>
 
                 {/* Trust pills */}
-                <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>
+                <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 32 }}>
                   {trustPills.map((p) => (
                     <div key={p} style={{ display: 'flex', alignItems: 'center', gap: 5, background: 'var(--orange-light)', border: '1px solid #F5C89A', color: '#9A4A0A', fontSize: 11, fontWeight: 600, padding: '5px 12px', borderRadius: 20 }}>{p}</div>
-                  ))}
-                </div>
-
-                {/* Guarantee strip */}
-                <div style={{ display: 'flex', border: '1px solid var(--border)', borderRadius: 8, overflow: 'hidden', marginBottom: 24 }}>
-                  {guaranteeItems.map((g, i) => (
-                    <div key={i} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '10px 4px', fontSize: 11, color: 'var(--mid)', textAlign: 'center', borderRight: i < guaranteeItems.length - 1 ? '1px solid var(--border)' : 'none', gap: 4 }}>
-                      <span style={{ fontSize: 18 }}>{g.icon}</span>
-                      <strong style={{ color: 'var(--dark)', fontSize: 11 }}>{g.label}</strong>
-                      {g.sub && <span>{g.sub}</span>}
-                    </div>
                   ))}
                 </div>
 
@@ -255,6 +259,100 @@ export default function Part2() {
             )}
           </div>
           </div>
+
+          {/* Related Products */}
+          <div style={{ padding: '60px 40px', background: '#FAFAFA', borderTop: '1px solid var(--border)' }}>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 32, color: 'var(--dark)', textAlign: 'center', marginBottom: 40, fontWeight: 500 }}>Related Products</h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
+              {[
+                { title: 'Try & Taste Nutramore’s H...', price: '₹250.00', btn: 'Add To Cart' },
+                { title: 'Ragi Chocolate Cookies', price: '₹165.00 - ₹1,262.00', btn: 'Select Options' },
+                { title: 'Moong Almond Pistachio ...', price: '₹180.00 - ₹1,377.00', btn: 'Select Options' },
+                { title: 'Jowar Chocolate Cookies', price: '₹165.00 - ₹1,262.00', btn: 'Select Options' },
+              ].map((prod, i) => (
+                <div key={i} style={{ background: '#fff', borderRadius: 12, padding: 16, border: '1px solid var(--border)', boxShadow: '0 4px 12px rgba(0,0,0,0.02)', display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ background: 'linear-gradient(135deg, #FDF0E6 0%, #FFF8F0 100%)', borderRadius: 8, aspectRatio: '1', marginBottom: 16, overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 50 }}>
+                    {i === 0 ? '🎁' : <img src="https://nutramore.in/wp-content/uploads/2023/06/moong-cookies-image-2.jpg" alt={prod.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />}
+                  </div>
+                  <h3 style={{ fontSize: 14, fontWeight: 600, color: 'var(--orange)', textAlign: 'center', margin: '0 0 12px 0', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{prod.title}</h3>
+                  <div style={{ fontSize: 13, color: 'var(--mid)', textAlign: 'center', fontWeight: 600, marginBottom: 16 }}>{prod.price}</div>
+                  <button style={{ marginTop: 'auto', width: '100%', padding: '10px 0', background: 'var(--orange)', color: '#fff', border: 'none', borderRadius: 6, fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
+                    {prod.btn}
+                  </button>
+                </div>
+              ))}
+            </div>
+            {/* Carousel Arrows */}
+            <div style={{ display: 'flex', justifyContent: 'center', gap: 12, marginTop: 32 }}>
+              <button style={{ width: 40, height: 40, borderRadius: '50%', border: '1px solid var(--border)', background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', fontSize: 16, color: 'var(--dark)' }}>{'<'}</button>
+              <button style={{ width: 40, height: 40, borderRadius: '50%', border: '1px solid var(--border)', background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', fontSize: 16, color: 'var(--dark)' }}>{'>'}</button>
+            </div>
+          </div>
+
+          {/* Footer */}
+          <div>
+            <div style={{ background: '#ED7E29', padding: '60px 40px', color: '#fff', display: 'grid', gridTemplateColumns: '1.2fr 1.5fr 1fr 1fr', gap: 40 }}>
+              {/* Brand */}
+              <div>
+                <div style={{ fontFamily: 'var(--font-display)', fontSize: 36, fontWeight: 700, lineHeight: 1, marginBottom: 8 }}>
+                  Nutra<span style={{ color: '#fff' }}>m♥re</span><span style={{ fontSize: 12, verticalAlign: 'top' }}>™</span>
+                </div>
+                <div style={{ fontSize: 11, letterSpacing: 1, textTransform: 'uppercase', fontWeight: 600 }}>Your fitness, our pride</div>
+              </div>
+
+              {/* Contact Us */}
+              <div>
+                <h4 style={{ fontSize: 20, fontFamily: 'var(--font-display)', margin: '0 0 20px 0', fontWeight: 500 }}>Contact Us</h4>
+                <div style={{ display: 'flex', gap: 12, marginBottom: 16, fontSize: 13, lineHeight: 1.5 }}>
+                  <span>📍</span>
+                  <span>Ganraj Sweets, 2, Building A Flat no. 203, Muktai Mathawad Pragan, Rambaug Colony Road, Kothrud, Pune, Pune, Maharashtra, 411038</span>
+                </div>
+                <div style={{ display: 'flex', gap: 12, marginBottom: 16, fontSize: 13 }}>
+                  <span>📞</span>
+                  <span>+917420915791</span>
+                </div>
+                <div style={{ display: 'flex', gap: 12, marginBottom: 24, fontSize: 13 }}>
+                  <span>✉️</span>
+                  <span>hello@nutramore.in</span>
+                </div>
+                {/* Social Icons */}
+                <div style={{ display: 'flex', gap: 12 }}>
+                  {['f', 'ig', 'yt'].map(icon => (
+                    <div key={icon} style={{ width: 32, height: 32, borderRadius: '50%', background: '#62A346', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 700, color: '#fff' }}>{icon}</div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Quick Links */}
+              <div>
+                <h4 style={{ fontSize: 20, fontFamily: 'var(--font-display)', margin: '0 0 20px 0', fontWeight: 500 }}>Quick Links</h4>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: 13, lineHeight: 2 }}>
+                  {['Privacy Policy', 'Terms & Conditions', 'Shipping Policy', 'Return & Refund Policy', 'About Us'].map(l => (
+                    <li key={l} style={{ cursor: 'pointer' }}>{l}</li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Important Note */}
+              <div>
+                <h4 style={{ fontSize: 20, fontFamily: 'var(--font-display)', margin: '0 0 20px 0', fontWeight: 500 }}>Important Note</h4>
+                <p style={{ fontSize: 13, lineHeight: 1.6, margin: 0 }}>
+                  We accept all UPI payment methods like PhonePe, Gpay, Paytm, all Debit/Credit Cards, Netbanking, and most Wallets.
+                </p>
+              </div>
+            </div>
+            
+            {/* Copyright Strip */}
+            <div style={{ background: '#7CB342', padding: '16px 40px', fontSize: 13, color: '#1B3E0C', fontWeight: 600 }}>
+              Copyright @ 2026| Right Reserved To NutraMore
+            </div>
+          </div>
+          
+          {/* WhatsApp Floating Button */}
+          <div style={{ position: 'absolute', bottom: 24, left: 24, background: '#25D366', color: '#fff', width: 44, height: 44, borderRadius: 4, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24, boxShadow: '0 4px 12px rgba(0,0,0,0.15)', cursor: 'pointer', zIndex: 100 }}>
+            <span style={{ transform: 'scale(1.2)' }}>✆</span>
+          </div>
+
         </div>
       </div>
 
