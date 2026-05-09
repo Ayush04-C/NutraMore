@@ -1,0 +1,37 @@
+/* ── Global Design Tokens ── */
+:root {
+  --orange: #E8650A;
+  --orange-light: #FDF0E6;
+  --orange-mid: #F28C3A;
+  --green: #2E7D32;
+  --green-light: #E8F5E9;
+  --dark: #1A1209;
+  --mid: #4A3728;
+  --muted: #8B7355;
+  --surface: #FDFAF6;
+  --white: #FFFFFF;
+  --border: #E8DFD0;
+  --border-strong: #C8B89A;
+  --radius: 12px;
+  --radius-sm: 6px;
+  --font-display: 'DM Serif Display', serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--surface);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #F0EBE1; }
+::-webkit-scrollbar-thumb { background: #C8B89A; border-radius: 3px; }
