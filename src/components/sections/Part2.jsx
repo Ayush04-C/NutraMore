@@ -13,7 +13,7 @@ export default function Part2() {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <Section>
+    <Section style={{ maxWidth: 1150 }}>
       <PartLabel num="2">Design Solution</PartLabel>
       <SectionTitle>Redesigned Product Detail Page</SectionTitle>
       <SectionDesc>
@@ -263,16 +263,16 @@ export default function Part2() {
           {/* Related Products */}
           <div style={{ padding: '60px 40px', background: '#FAFAFA', borderTop: '1px solid var(--border)' }}>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 32, color: 'var(--dark)', textAlign: 'center', marginBottom: 40, fontWeight: 500 }}>Related Products</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 24 }}>
               {[
-                { title: 'Try & Taste Nutramore’s H...', price: '₹250.00', btn: 'Add To Cart' },
-                { title: 'Ragi Chocolate Cookies', price: '₹165.00 - ₹1,262.00', btn: 'Select Options' },
-                { title: 'Moong Almond Pistachio ...', price: '₹180.00 - ₹1,377.00', btn: 'Select Options' },
-                { title: 'Jowar Chocolate Cookies', price: '₹165.00 - ₹1,262.00', btn: 'Select Options' },
+                { title: 'Breakfast Premix', price: '₹250.00', btn: 'Add To Cart', img: 'https://nutramore.in/wp-content/uploads/2025/04/cat2.jpg' },
+                { title: 'Savoury Snacks', price: '₹165.00 - ₹1,262.00', btn: 'Select Options', img: 'https://nutramore.in/wp-content/uploads/2025/04/cat.jpg' },
+                { title: 'Moong Almond Pistachio ...', price: '₹180.00 - ₹1,377.00', btn: 'Select Options', img: 'https://nutramore.in/wp-content/uploads/2023/06/moong-cookies-image-2.jpg' },
+                { title: 'Jowar Chocolate Cookies', price: '₹165.00 - ₹1,262.00', btn: 'Select Options', img: 'https://nutramore.in/wp-content/uploads/2025/04/bajra-cat.jpg' },
               ].map((prod, i) => (
                 <div key={i} style={{ background: '#fff', borderRadius: 12, padding: 16, border: '1px solid var(--border)', boxShadow: '0 4px 12px rgba(0,0,0,0.02)', display: 'flex', flexDirection: 'column' }}>
-                  <div style={{ background: 'linear-gradient(135deg, #FDF0E6 0%, #FFF8F0 100%)', borderRadius: 8, aspectRatio: '1', marginBottom: 16, overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 50 }}>
-                    {i === 0 ? '🎁' : <img src="https://nutramore.in/wp-content/uploads/2023/06/moong-cookies-image-2.jpg" alt={prod.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />}
+                  <div style={{ background: '#FDF0E6', borderRadius: 8, aspectRatio: '1', marginBottom: 16, overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <img src={prod.img} alt={prod.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                   <h3 style={{ fontSize: 14, fontWeight: 600, color: 'var(--orange)', textAlign: 'center', margin: '0 0 12px 0', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{prod.title}</h3>
                   <div style={{ fontSize: 13, color: 'var(--mid)', textAlign: 'center', fontWeight: 600, marginBottom: 16 }}>{prod.price}</div>
@@ -348,11 +348,6 @@ export default function Part2() {
             </div>
           </div>
           
-          {/* WhatsApp Floating Button */}
-          <div style={{ position: 'absolute', bottom: 24, left: 24, background: '#25D366', color: '#fff', width: 44, height: 44, borderRadius: 4, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24, boxShadow: '0 4px 12px rgba(0,0,0,0.15)', cursor: 'pointer', zIndex: 100 }}>
-            <span style={{ transform: 'scale(1.2)' }}>✆</span>
-          </div>
-
         </div>
       </div>
 
